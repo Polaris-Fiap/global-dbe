@@ -31,6 +31,7 @@ public class Mulher {
     @Column(name = "dt_nascimento")
 	@JsonFormat(pattern="dd/MM/yyyy")
     private Date dtNascimento;
+    
     //atributo para imagem
 
     @Column(name = "nr_cpf")
