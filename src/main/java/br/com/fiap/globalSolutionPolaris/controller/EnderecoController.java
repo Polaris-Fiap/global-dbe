@@ -40,15 +40,15 @@ public class EnderecoController{
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Endereco> updateEnderecoById(@PathVariable Long cep, @RequestBody @Valid Endereco novoEndereco){
-        var optional = enderecoService.getById(cep);
+    public ResponseEntity<Endereco> updateEnderecoById(@PathVariable Long id, @RequestBody @Valid Endereco novoEndereco){
+        var optional = enderecoService.getById(id);
 
         if(optional.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
         var endereco = optional.get();
         BeanUtils.copyProperties(novoEndereco, endereco);
-        endereco.setNumeroCep(cep);
+        endereco.setId(id);
 
         enderecoService.save(endereco);
         return ResponseEntity.ok(endereco);

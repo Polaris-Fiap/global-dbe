@@ -16,6 +16,9 @@ public class Endereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cod_endereco")
+    private Long id;
+
     @Column(name = "nr_cep")
     private Long numeroCep;
 
@@ -26,19 +29,28 @@ public class Endereco {
     private Integer numeroRua;
 
     @Column(name = "ds_complemento")
-    private String descComplemento;
+    private String desComplemento;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Bairro bairro;
 
     public Endereco () {}
 
-    public Endereco(Long numeroCep, String nomeRua, Integer numeroRua, String descComplemento, Bairro bairro) {
+    public Endereco(Long id, Long numeroCep, String nomeRua, Integer numeroRua, String desComplemento, Bairro bairro) {
+        this.id = id;
         this.numeroCep = numeroCep;
         this.nomeRua = nomeRua;
         this.numeroRua = numeroRua;
-        this.descComplemento = descComplemento;
+        this.desComplemento = desComplemento;
         this.bairro = bairro;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getNumeroCep() {
@@ -65,12 +77,12 @@ public class Endereco {
         this.numeroRua = numeroRua;
     }
 
-    public String getDescComplemento() {
-        return descComplemento;
+    public String getDesComplemento() {
+        return desComplemento;
     }
 
-    public void setDescComplemento(String descComplemento) {
-        this.descComplemento = descComplemento;
+    public void setDesComplemento(String desComplemento) {
+        this.desComplemento = desComplemento;
     }
 
     public Bairro getBairro() {
@@ -83,9 +95,7 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco [numeroCep=" + numeroCep + ", nomeRua=" + nomeRua + ", numeroRua=" + numeroRua
-                + ", descComplemento=" + descComplemento + ", bairro=" + bairro + "]";
-    }
-
-    
+        return "Endereco [id=" + id + ", numeroCep=" + numeroCep + ", nomeRua=" + nomeRua + ", numeroRua=" + numeroRua
+                + ", desComplemento=" + desComplemento + ", bairro=" + bairro + "]";
+    }    
 }
