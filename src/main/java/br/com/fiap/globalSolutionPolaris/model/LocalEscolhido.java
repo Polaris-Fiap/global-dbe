@@ -27,7 +27,7 @@ public class LocalEscolhido {
     private String incidente;
 
     @Column(name = "dt_ocorrencia")
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dtOcorrencia;
 
     @Column(name = "vl_avaliacao_perigo")
@@ -36,12 +36,15 @@ public class LocalEscolhido {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Endereco endereco;
 
-    public LocalEscolhido() {}
+    public LocalEscolhido() {
+    }
 
-    public LocalEscolhido(Long codLocal, String incidente, Date dtOcorrencia, Endereco endereco) {
+    public LocalEscolhido(Long codLocal, String incidente, Date dtOcorrencia, Integer avaliacaoPerigo,
+            Endereco endereco) {
         this.codLocal = codLocal;
         this.incidente = incidente;
         this.dtOcorrencia = dtOcorrencia;
+        this.avaliacaoPerigo = avaliacaoPerigo;
         this.endereco = endereco;
     }
 
@@ -69,14 +72,6 @@ public class LocalEscolhido {
         this.dtOcorrencia = dtOcorrencia;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public Integer getAvaliacaoPerigo() {
         return avaliacaoPerigo;
     }
@@ -85,9 +80,18 @@ public class LocalEscolhido {
         this.avaliacaoPerigo = avaliacaoPerigo;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     @Override
     public String toString() {
         return "LocalEscolhido [codLocal=" + codLocal + ", incidente=" + incidente + ", dtOcorrencia=" + dtOcorrencia
-                + ", endereco=" + endereco + "]";
+                + ", avaliacaoPerigo=" + avaliacaoPerigo + ", endereco=" + endereco + "]";
     }
+
 }

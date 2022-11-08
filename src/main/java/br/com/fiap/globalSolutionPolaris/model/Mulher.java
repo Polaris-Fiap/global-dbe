@@ -26,8 +26,11 @@ public class Mulher {
     @Column(name = "nm_mulher")
     private String nomeMulher;
 
-    private String email; // herdar de usuario
-    private String senha; // herdar de usuario
+    @Column(name = "ds_email")
+    private String email; 
+
+    @Column(name = "ds_senha")
+    private String senha; 
 
     @Column(name = "dt_nascimento")
 	@JsonFormat(pattern="dd/MM/yyyy")
@@ -45,28 +48,13 @@ public class Mulher {
     @Column(name = "nr_telefone_ddd")
     private Integer telefoneDDD;
 
-    // @Column(name = "ds_estado_civil")
-    // private String estadoCivil;
-
-    // @Column(name = "ds_profissao")
-    // private String profissao;
-
-    // @Column(name = "nr_rg")
-    // private Integer rg;
-
-    // @Column(name = "ds_rg_digito")
-    // private Integer rgDigito;
-
-    // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    // private Endereco endereco;
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<LocalEscolhido> local;
 
     public Mulher () {}
 
     public Mulher(Long codMulher, String nomeMulher, String email, String senha, Date dtNascimento, Integer cpf,
-            Integer cpfDigito, Integer telefone, Integer telefoneDDD) {
+            Integer cpfDigito, Integer telefone, Integer telefoneDDD, List<LocalEscolhido> local) {
         this.codMulher = codMulher;
         this.nomeMulher = nomeMulher;
         this.email = email;
@@ -76,6 +64,7 @@ public class Mulher {
         this.cpfDigito = cpfDigito;
         this.telefone = telefone;
         this.telefoneDDD = telefoneDDD;
+        this.local = local;
     }
 
     public Long getCodMulher() {
@@ -150,11 +139,18 @@ public class Mulher {
         this.telefoneDDD = telefoneDDD;
     }
 
+    public List<LocalEscolhido> getLocal() {
+        return local;
+    }
+
+    public void setLocal(List<LocalEscolhido> local) {
+        this.local = local;
+    }
+
     @Override
     public String toString() {
         return "Mulher [codMulher=" + codMulher + ", nomeMulher=" + nomeMulher + ", email=" + email + ", senha=" + senha
                 + ", dtNascimento=" + dtNascimento + ", cpf=" + cpf + ", cpfDigito=" + cpfDigito + ", telefone="
-                + telefone + ", telefoneDDD=" + telefoneDDD + "]";
+                + telefone + ", telefoneDDD=" + telefoneDDD + ", local=" + local + "]";
     }
-
 }
