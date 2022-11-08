@@ -22,6 +22,8 @@ public class Estado {
     @Column(name = "ds_sigla")
     private String siglaEstado;
 
+    public Estado() {}
+
     public Estado(Long codEstado, String nomeEstado, String siglaEstado) {
         this.codEstado = codEstado;
         this.nomeEstado = nomeEstado;
