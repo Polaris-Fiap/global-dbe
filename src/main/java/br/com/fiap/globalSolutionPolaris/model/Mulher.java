@@ -1,6 +1,7 @@
 package br.com.fiap.globalSolutionPolaris.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,7 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -31,8 +32,6 @@ public class Mulher {
     @Column(name = "dt_nascimento")
 	@JsonFormat(pattern="dd/MM/yyyy")
     private Date dtNascimento;
-    
-    //atributo para imagem
 
     @Column(name = "nr_cpf")
     private Integer cpf;
@@ -46,26 +45,28 @@ public class Mulher {
     @Column(name = "nr_telefone_ddd")
     private Integer telefoneDDD;
 
-    @Column(name = "ds_estado_civil")
-    private String estadoCivil;
+    // @Column(name = "ds_estado_civil")
+    // private String estadoCivil;
 
-    @Column(name = "ds_profissao")
-    private String profissao;
+    // @Column(name = "ds_profissao")
+    // private String profissao;
 
-    @Column(name = "nr_rg")
-    private Integer rg;
+    // @Column(name = "nr_rg")
+    // private Integer rg;
 
-    @Column(name = "ds_rg_digito")
-    private Integer rgDigito;
+    // @Column(name = "ds_rg_digito")
+    // private Integer rgDigito;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Endereco endereco;
+    // @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    // private Endereco endereco;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<LocalEscolhido> local;
 
     public Mulher () {}
 
     public Mulher(Long codMulher, String nomeMulher, String email, String senha, Date dtNascimento, Integer cpf,
-            Integer cpfDigito, Integer telefone, Integer telefoneDDD, String estadoCivil, String profissao, Integer rg,
-            Integer rgDigito, Endereco endereco) {
+            Integer cpfDigito, Integer telefone, Integer telefoneDDD) {
         this.codMulher = codMulher;
         this.nomeMulher = nomeMulher;
         this.email = email;
@@ -75,11 +76,6 @@ public class Mulher {
         this.cpfDigito = cpfDigito;
         this.telefone = telefone;
         this.telefoneDDD = telefoneDDD;
-        this.estadoCivil = estadoCivil;
-        this.profissao = profissao;
-        this.rg = rg;
-        this.rgDigito = rgDigito;
-        this.endereco = endereco;
     }
 
     public Long getCodMulher() {
@@ -154,51 +150,11 @@ public class Mulher {
         this.telefoneDDD = telefoneDDD;
     }
 
-    public String getEstadoCivil() {
-        return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
-    }
-
-    public String getProfissao() {
-        return profissao;
-    }
-
-    public void setProfissao(String profissao) {
-        this.profissao = profissao;
-    }
-
-    public Integer getRg() {
-        return rg;
-    }
-
-    public void setRg(Integer rg) {
-        this.rg = rg;
-    }
-
-    public Integer getRgDigito() {
-        return rgDigito;
-    }
-
-    public void setRgDigito(Integer rgDigito) {
-        this.rgDigito = rgDigito;
-    }
-
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     @Override
     public String toString() {
         return "Mulher [codMulher=" + codMulher + ", nomeMulher=" + nomeMulher + ", email=" + email + ", senha=" + senha
                 + ", dtNascimento=" + dtNascimento + ", cpf=" + cpf + ", cpfDigito=" + cpfDigito + ", telefone="
-                + telefone + ", telefoneDDD=" + telefoneDDD + ", estadoCivil=" + estadoCivil + ", profissao="
-                + profissao + ", rg=" + rg + ", rgDigito=" + rgDigito + ", endereco=" + endereco + "]";
+                + telefone + ", telefoneDDD=" + telefoneDDD + "]";
     }
+
 }

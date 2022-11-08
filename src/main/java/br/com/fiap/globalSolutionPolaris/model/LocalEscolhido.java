@@ -1,5 +1,7 @@
 package br.com.fiap.globalSolutionPolaris.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "T_MNT_LOCAL_ESCOLHIDO")
@@ -22,14 +26,22 @@ public class LocalEscolhido {
     @Column(name = "ds_incidente")
     private String incidente;
 
+    @Column(name = "dt_ocorrencia")
+    @JsonFormat(pattern="dd/MM/yyyy")
+    private Date dtOcorrencia;
+
+    @Column(name = "vl_avaliacao_perigo")
+    private Integer avaliacaoPerigo;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Endereco endereco;
 
     public LocalEscolhido() {}
-    
-    public LocalEscolhido(Long codLocal, String incidente, Endereco endereco) {
+
+    public LocalEscolhido(Long codLocal, String incidente, Date dtOcorrencia, Endereco endereco) {
         this.codLocal = codLocal;
         this.incidente = incidente;
+        this.dtOcorrencia = dtOcorrencia;
         this.endereco = endereco;
     }
 
@@ -49,6 +61,14 @@ public class LocalEscolhido {
         this.incidente = incidente;
     }
 
+    public Date getDtOcorrencia() {
+        return dtOcorrencia;
+    }
+
+    public void setDtOcorrencia(Date dtOcorrencia) {
+        this.dtOcorrencia = dtOcorrencia;
+    }
+
     public Endereco getEndereco() {
         return endereco;
     }
@@ -57,9 +77,17 @@ public class LocalEscolhido {
         this.endereco = endereco;
     }
 
-    @Override
-    public String toString() {
-        return "LocalEscolhido [codLocal=" + codLocal + ", incidente=" + incidente + ", endereco=" + endereco + "]";
+    public Integer getAvaliacaoPerigo() {
+        return avaliacaoPerigo;
     }
 
+    public void setAvaliacaoPerigo(Integer avaliacaoPerigo) {
+        this.avaliacaoPerigo = avaliacaoPerigo;
+    }
+
+    @Override
+    public String toString() {
+        return "LocalEscolhido [codLocal=" + codLocal + ", incidente=" + incidente + ", dtOcorrencia=" + dtOcorrencia
+                + ", endereco=" + endereco + "]";
+    }
 }
