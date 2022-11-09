@@ -67,4 +67,9 @@ public class MulherController {
     	service.remove(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<Mulher> getMulherById(@PathVariable Long id){
+        return ResponseEntity.of(service.getById(id));
+    }
 }

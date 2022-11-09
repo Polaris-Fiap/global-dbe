@@ -36,7 +36,14 @@ public class LocalEscolhido {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Endereco endereco;
 
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Mulher mulher;
+
     public LocalEscolhido() {
+    }
+
+    public LocalEscolhido(Long codLocal) {
+        this.codLocal = codLocal;
     }
 
     public LocalEscolhido(Long codLocal, String incidente, Date dtOcorrencia, Integer avaliacaoPerigo,
@@ -46,6 +53,16 @@ public class LocalEscolhido {
         this.dtOcorrencia = dtOcorrencia;
         this.avaliacaoPerigo = avaliacaoPerigo;
         this.endereco = endereco;
+    }
+
+    public LocalEscolhido(Long codLocal, String incidente, Date dtOcorrencia, Integer avaliacaoPerigo,
+            Endereco endereco, Mulher mulher) {
+        this.codLocal = codLocal;
+        this.incidente = incidente;
+        this.dtOcorrencia = dtOcorrencia;
+        this.avaliacaoPerigo = avaliacaoPerigo;
+        this.endereco = endereco;
+        this.mulher = mulher;
     }
 
     public Long getCodLocal() {
@@ -88,6 +105,14 @@ public class LocalEscolhido {
         this.endereco = endereco;
     }
 
+    public Mulher getMulher() {
+        return mulher;
+    }
+
+    public void setMulher(Mulher mulher) {
+        this.mulher = mulher;
+    }
+    
     @Override
     public String toString() {
         return "LocalEscolhido [codLocal=" + codLocal + ", incidente=" + incidente + ", dtOcorrencia=" + dtOcorrencia

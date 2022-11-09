@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.fiap.globalSolutionPolaris.model.Mulher;
+import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
 import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 
 @Service
@@ -17,6 +18,9 @@ public class MulherService {
     
     @Autowired
     MulherRepository repository;
+
+    @Autowired
+    LocalEscolhidoRepository localRepository;
     
     public void save(Mulher mulher) {
         repository.save(mulher);
@@ -33,4 +37,6 @@ public class MulherService {
     public Optional<Mulher> getById(Long id) {
         return repository.findById(id);
     }
+
+    
 }
