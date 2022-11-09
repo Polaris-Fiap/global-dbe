@@ -19,28 +19,6 @@ public class CreateLocalWithUserDto {
 
     private Integer avaliacaoPerigo;
 
-    // // endereco
-    // private Long numeroCep;
-
-    // private String nomeRua;
-
-    // private Integer numeroRua;
-
-    // private String desComplemento;
-
-    // // bairro
-    // private String nomeBairro;
-
-    // // cidade
-    // private String nomeCidade;
-
-    // private String siglaCidade;
-
-    // // estado
-    // private String nomeEstado;
-
-    // private String siglaEstado;
-
     private Endereco endereco;
 
     public CreateLocalWithUserDto() {
@@ -95,25 +73,5 @@ public class CreateLocalWithUserDto {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-
-    // public CreateLocalWithUserDto(LocalEscolhido local) {
-    // this.codMulher = local.getMulher().getCodMulher();
-    // this.incidente = local.getIncidente();
-    // this.dtOcorrencia = local.getDtOcorrencia();
-    // this.avaliacaoPerigo = local.getAvaliacaoPerigo();
-    // this.numeroCep = local.getEndereco().getNumeroCep();
-    // this.nomeRua = local.getEndereco().getNomeRua();
-    // this.numeroRua = local.getEndereco().getNumeroRua();
-    // this.desComplemento = local.getEndereco().getDesComplemento();
-    // this.nomeBairro = local.getEndereco().getBairro().getNomeBairro();
-    // this.nomeCidade =
-    // local.getEndereco().getBairro().getCidade().getNomeCidade();
-    // this.siglaCidade =
-    // local.getEndereco().getBairro().getCidade().getSiglaCidade();
-    // this.nomeEstado =
-    // local.getEndereco().getBairro().getCidade().getEstado().getNomeEstado();
-    // this.siglaEstado =
-    // local.getEndereco().getBairro().getCidade().getEstado().getSiglaEstado();
-    // }
 
 }
