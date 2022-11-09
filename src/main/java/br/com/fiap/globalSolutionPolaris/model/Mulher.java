@@ -1,16 +1,12 @@
 package br.com.fiap.globalSolutionPolaris.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -22,18 +18,18 @@ public class Mulher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codMulher;
-    
+
     @Column(name = "nm_mulher")
     private String nomeMulher;
 
     @Column(name = "ds_email")
-    private String email; 
+    private String email;
 
     @Column(name = "ds_senha")
-    private String senha; 
+    private String senha;
 
     @Column(name = "dt_nascimento")
-	@JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dtNascimento;
 
     @Column(name = "nr_cpf")
@@ -48,13 +44,11 @@ public class Mulher {
     @Column(name = "nr_telefone_ddd")
     private Integer telefoneDDD;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<LocalEscolhido> local;
-
-    public Mulher () {}
+    public Mulher() {
+    }
 
     public Mulher(Long codMulher, String nomeMulher, String email, String senha, Date dtNascimento, Integer cpf,
-            Integer cpfDigito, Integer telefone, Integer telefoneDDD, List<LocalEscolhido> local) {
+            Integer cpfDigito, Integer telefone, Integer telefoneDDD) {
         this.codMulher = codMulher;
         this.nomeMulher = nomeMulher;
         this.email = email;
@@ -64,7 +58,6 @@ public class Mulher {
         this.cpfDigito = cpfDigito;
         this.telefone = telefone;
         this.telefoneDDD = telefoneDDD;
-        this.local = local;
     }
 
     public Long getCodMulher() {
@@ -139,18 +132,10 @@ public class Mulher {
         this.telefoneDDD = telefoneDDD;
     }
 
-    public List<LocalEscolhido> getLocal() {
-        return local;
-    }
-
-    public void setLocal(List<LocalEscolhido> local) {
-        this.local = local;
-    }
-
     @Override
     public String toString() {
         return "Mulher [codMulher=" + codMulher + ", nomeMulher=" + nomeMulher + ", email=" + email + ", senha=" + senha
                 + ", dtNascimento=" + dtNascimento + ", cpf=" + cpf + ", cpfDigito=" + cpfDigito + ", telefone="
-                + telefone + ", telefoneDDD=" + telefoneDDD + ", local=" + local + "]";
+                + telefone + ", telefoneDDD=" + telefoneDDD + "]";
     }
 }
