@@ -6,10 +6,10 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
 import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 
 @Service
@@ -20,9 +20,10 @@ public class MulherService {
     MulherRepository repository;
 
     @Autowired
-    LocalEscolhidoRepository localRepository;
+    PasswordEncoder passwordEncoder;
     
     public void save(Mulher mulher) {
+        mulher.setSenha(passwordEncoder.encode(mulher.getPassword()));
         repository.save(mulher);
     }
 
