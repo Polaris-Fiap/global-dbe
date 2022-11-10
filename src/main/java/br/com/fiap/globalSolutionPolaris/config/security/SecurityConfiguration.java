@@ -28,8 +28,8 @@ public class SecurityConfiguration {
             //request api/local
             .antMatchers(HttpMethod.POST, "/api/localEscolhido").permitAll()
             .antMatchers(HttpMethod.GET, "/api/localEscolhido").permitAll()
-            .antMatchers(HttpMethod.PUT, "/api/localEscolhido/**").permitAll() //auth
-            .antMatchers(HttpMethod.DELETE, "/api/localEscolhido/**").permitAll() //auth
+            .antMatchers(HttpMethod.PUT, "/api/localEscolhido/**").authenticated() //auth
+            .antMatchers(HttpMethod.DELETE, "/api/localEscolhido/**").authenticated() //auth
             .antMatchers(HttpMethod.GET, "/api/localEscolhido/**").permitAll() 
 
             .anyRequest().permitAll()

@@ -22,8 +22,8 @@ public class DatabaseSeed implements CommandLineRunner{
     public void run(String... args) throws Exception {
         mulherRepository.save(
             new Mulher()
-                    .nome("Julia")
-                    .email("julia@gmail.com")
+                    .nome("Paula Pereira")
+                    .email("paula@gmail.com")
                     .senha(passwordEncoder.encode("123"))
                     .dtNascimento("01/01/2000")
                     .cpf(123456789)
