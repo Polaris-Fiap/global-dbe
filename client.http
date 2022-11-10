@@ -80,24 +80,24 @@ Content-Type: application/json
 
 ###
 
-# Listar
+# Listar localEscolhido
 GET http://localhost:8080/api/localEscolhido
 
 ###
 
-# Listar
+# Listar localEscolhido
 GET http://localhost:8080/api/localEscolhido/1
 
 ###
 
-# Apagar
+# Apagar localEscolhido
 DELETE http://localhost:8080/api/localEscolhido/1
 Content-Type: application/json
 Authorization: Basic paula@gmail.com 123
 
 ###
 
-# Atualizar
+# Atualizar localEscolhido
 PUT http://localhost:8080/api/localEscolhido/1
 Content-Type: application/json
 Authorization: Basic paula@gmail.com 123

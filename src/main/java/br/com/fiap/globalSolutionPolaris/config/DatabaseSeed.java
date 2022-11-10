@@ -7,6 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import br.com.fiap.globalSolutionPolaris.model.Mulher;
 import br.com.fiap.globalSolutionPolaris.model.Role;
+import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
 import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 
 @Configuration
@@ -17,6 +18,9 @@ public class DatabaseSeed implements CommandLineRunner{
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    LocalEscolhidoRepository localRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -33,6 +37,14 @@ public class DatabaseSeed implements CommandLineRunner{
                     .role(new Role("ROLE_USER"))
 
         );        
+
+        // localRepository.save(
+        //     new LocalEscolhido()
+        //             .incidente("dois caras numa moto")
+        //             .dtOcorrencia("12/06/2006")
+        //             .avaliacaoPerigo(5)
+        //             .mulher(new Mulher(0,"silvia", "silvia@gmail.com", 123, new date))            
+        // );
     }
     
 }

@@ -1,5 +1,7 @@
 package br.com.fiap.globalSolutionPolaris.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -11,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -33,10 +37,10 @@ public class LocalEscolhido {
     @Column(name = "vl_avaliacao_perigo")
     private Integer avaliacaoPerigo;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Endereco endereco;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Mulher mulher;
 
     public LocalEscolhido() {
@@ -112,6 +116,40 @@ public class LocalEscolhido {
     public void setMulher(Mulher mulher) {
         this.mulher = mulher;
     }
+
+    //metodos para setar no database
+    public LocalEscolhido incidente(String incidente) {
+        Assert.notNull(incidente, "Campo incidente não pode estar vazio");
+        this.incidente = incidente;
+        return this;
+    }
+
+    public LocalEscolhido dtOcorrencia(String dataOcorrencia) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = sdf.parse(dataOcorrencia);
+        Assert.notNull(dataOcorrencia, "Data de nascimento nao pode estar vazia");
+        this.dtOcorrencia = data;
+        return this;
+    }
+
+    public LocalEscolhido avaliacaoPerigo(Integer avPerigo) {
+        Assert.notNull(avPerigo, "Avaliacao nao pode estar vazia");
+        this.avaliacaoPerigo = avPerigo;
+        return this;
+    }
+
+    public LocalEscolhido mulher(Mulher mulher) {
+        Assert.notNull(mulher, "Campo mulher nao pode estar vazio");
+        this.mulher = mulher;
+        return this;
+    }
+
+    public LocalEscolhido endereco(Endereco endereco) {
+        Assert.notNull(endereco, "Campo endereco nao pode estar vazio");
+        this.endereco = endereco;
+        return this;
+    }
+    
     
     @Override
     public String toString() {

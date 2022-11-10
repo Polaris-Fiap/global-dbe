@@ -1,0 +1,29 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.botao-cadastrar{
+	border-radius: 12px;
+	border: 0px;
+	padding: 12px;
+	cursor: pointer;
+	background-color: #C09BD8;
+	color: white;
+}
+
+.ocorrencia{
+	padding: 8px;
+	border: solid 1px #C09BD8;
+	border-radius: 8px;
+	max-width: 400px;
+}
+
+.container-ocorrencia{
+	display: flex;
+}
+
+.container{
+	padding: 12px;
+}
