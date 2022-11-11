@@ -1,14 +1,14 @@
-package br.com.fiap.globalSolutionPolaris.config;
+package br.com.fiap.GlobalSolutionPolaris.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.model.Role;
-import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
-import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.model.Role;
+import br.com.fiap.GlobalSolutionPolaris.repository.LocalEscolhidoRepository;
+import br.com.fiap.GlobalSolutionPolaris.repository.MulherRepository;
 
 @Configuration
 public class DatabaseSeed implements CommandLineRunner {

@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.controller;
+package br.com.fiap.GlobalSolutionPolaris.controller;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.globalSolutionPolaris.dto.CreateLocalWithUserDto;
-import br.com.fiap.globalSolutionPolaris.model.LocalEscolhido;
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.service.LocalEscolhidoService;
+import br.com.fiap.GlobalSolutionPolaris.dto.CreateLocalWithUserDto;
+import br.com.fiap.GlobalSolutionPolaris.model.LocalEscolhido;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.service.LocalEscolhidoService;
 
 @RestController
 @RequestMapping("api/localEscolhido")

@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.controller;
+package br.com.fiap.GlobalSolutionPolaris.controller;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fiap.globalSolutionPolaris.model.Endereco;
-import br.com.fiap.globalSolutionPolaris.service.EnderecoService;
+import br.com.fiap.GlobalSolutionPolaris.model.Endereco;
+import br.com.fiap.GlobalSolutionPolaris.service.EnderecoService;
 
 @RestController
 @RequestMapping("api/endereco")

@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.config.security;
+package br.com.fiap.GlobalSolutionPolaris.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

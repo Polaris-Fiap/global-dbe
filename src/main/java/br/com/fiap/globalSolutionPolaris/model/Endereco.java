@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.model;
+package br.com.fiap.GlobalSolutionPolaris.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

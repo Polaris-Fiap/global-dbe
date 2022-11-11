@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.service;
+package br.com.fiap.GlobalSolutionPolaris.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,13 +8,13 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fiap.globalSolutionPolaris.dto.CreateLocalWithUserDto;
-import br.com.fiap.globalSolutionPolaris.model.Endereco;
-import br.com.fiap.globalSolutionPolaris.model.LocalEscolhido;
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.repository.EnderecoRepository;
-import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
-import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
+import br.com.fiap.GlobalSolutionPolaris.dto.CreateLocalWithUserDto;
+import br.com.fiap.GlobalSolutionPolaris.model.Endereco;
+import br.com.fiap.GlobalSolutionPolaris.model.LocalEscolhido;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.repository.EnderecoRepository;
+import br.com.fiap.GlobalSolutionPolaris.repository.LocalEscolhidoRepository;
+import br.com.fiap.GlobalSolutionPolaris.repository.MulherRepository;
 
 @Service
 @Transactional

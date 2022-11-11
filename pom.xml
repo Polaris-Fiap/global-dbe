@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.fiap</groupId>
-	<artifactId>globalSolutionPolaris</artifactId>
+	<artifactId>GlobalSolutionPolaris</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>globalSolutionPolaris</name>
+	<name>GlobalSolutionPolaris</name>
 	<description>Demo project for global solution</description>
 	<properties>
 		<java.version>17</java.version>

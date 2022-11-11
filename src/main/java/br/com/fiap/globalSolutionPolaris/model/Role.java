@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.model;
+package br.com.fiap.GlobalSolutionPolaris.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

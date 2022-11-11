@@ -1,10 +1,10 @@
-package br.com.fiap.globalSolutionPolaris.dto;
+package br.com.fiap.GlobalSolutionPolaris.dto;
 
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.com.fiap.globalSolutionPolaris.model.Endereco;
+import br.com.fiap.GlobalSolutionPolaris.model.Endereco;
 
 public class CreateLocalWithUserDto {
 

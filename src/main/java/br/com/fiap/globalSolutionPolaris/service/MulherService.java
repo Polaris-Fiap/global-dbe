@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.service;
+package br.com.fiap.GlobalSolutionPolaris.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.repository.MulherRepository;
 
 @Service
 @Transactional

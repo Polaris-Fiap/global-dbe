@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.controller;
+package br.com.fiap.GlobalSolutionPolaris.controller;
 
 import java.util.Optional;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.service.MulherService;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.service.MulherService;
 
 @Controller
 public class MulherWebController {

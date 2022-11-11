@@ -1,4 +1,4 @@
-package br.com.fiap.globalSolutionPolaris.service;
+package br.com.fiap.GlobalSolutionPolaris.service;
 
 import java.util.Optional;
 
@@ -8,8 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.fiap.globalSolutionPolaris.model.Mulher;
-import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
+import br.com.fiap.GlobalSolutionPolaris.model.Mulher;
+import br.com.fiap.GlobalSolutionPolaris.repository.MulherRepository;
 
 @Service
 public class AuthenticationService implements UserDetailsService {
