@@ -27,3 +27,18 @@
 .container{
 	padding: 12px;
 }
+
+.container-table{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.div-tabela{
+	width: 1200px ;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 12px;
+}
