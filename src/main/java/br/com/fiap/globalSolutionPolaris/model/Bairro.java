@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_MNT_BAIRRO")
 public class Bairro {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cd_bairro")
@@ -25,7 +25,8 @@ public class Bairro {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Cidade cidade;
 
-    public Bairro() {}
+    public Bairro() {
+    }
 
     public Bairro(Long codBairro, String nomeBairro, Cidade cidade) {
         this.codBairro = codBairro;

@@ -25,7 +25,7 @@ import br.com.fiap.globalSolutionPolaris.service.LocalEscolhidoService;
 @RestController
 @RequestMapping("api/localEscolhido")
 public class LocalEscolhidoController {
-    
+
     @Autowired
     LocalEscolhidoService service;
 
@@ -47,21 +47,22 @@ public class LocalEscolhidoController {
 
         var optional = service.getById(id);
 
-        if(optional.isEmpty()) {
+        if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        }
 
-    	service.remove(id);
+        service.remove(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<LocalEscolhido> updateLocalById(@PathVariable Long id, @RequestBody @Valid LocalEscolhido novoLocal){
+    public ResponseEntity<LocalEscolhido> updateLocalById(@PathVariable Long id,
+            @RequestBody @Valid LocalEscolhido novoLocal) {
         var optional = service.getById(id);
 
-        if(optional.isEmpty()){
+        if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        }
 
         var local = optional.get();
         Mulher mulher = local.getMulher();
@@ -74,9 +75,8 @@ public class LocalEscolhidoController {
         return ResponseEntity.ok(local);
     }
 
-
     @GetMapping("{id}")
-    public ResponseEntity<LocalEscolhido> getLocalById(@PathVariable Long id){
+    public ResponseEntity<LocalEscolhido> getLocalById(@PathVariable Long id) {
         return ResponseEntity.of(service.getById(id));
     }
 }

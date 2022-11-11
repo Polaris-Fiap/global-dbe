@@ -117,7 +117,7 @@ public class LocalEscolhido {
         this.mulher = mulher;
     }
 
-    //metodos para setar no database
+    // metodos para setar no database
     public LocalEscolhido incidente(String incidente) {
         Assert.notNull(incidente, "Campo incidente não pode estar vazio");
         this.incidente = incidente;
@@ -149,8 +149,7 @@ public class LocalEscolhido {
         this.endereco = endereco;
         return this;
     }
-    
-    
+
     @Override
     public String toString() {
         return "LocalEscolhido [codLocal=" + codLocal + ", incidente=" + incidente + ", dtOcorrencia=" + dtOcorrencia

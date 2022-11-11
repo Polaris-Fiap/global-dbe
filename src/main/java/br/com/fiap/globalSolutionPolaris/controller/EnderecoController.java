@@ -21,7 +21,7 @@ import br.com.fiap.globalSolutionPolaris.service.EnderecoService;
 
 @RestController
 @RequestMapping("api/endereco")
-public class EnderecoController{
+public class EnderecoController {
 
     @Autowired
     private EnderecoService enderecoService;
@@ -40,12 +40,13 @@ public class EnderecoController{
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Endereco> updateEnderecoById(@PathVariable Long id, @RequestBody @Valid Endereco novoEndereco){
+    public ResponseEntity<Endereco> updateEnderecoById(@PathVariable Long id,
+            @RequestBody @Valid Endereco novoEndereco) {
         var optional = enderecoService.getById(id);
 
-        if(optional.isEmpty()){
+        if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        }
         var endereco = optional.get();
         BeanUtils.copyProperties(novoEndereco, endereco);
         endereco.setId(id);

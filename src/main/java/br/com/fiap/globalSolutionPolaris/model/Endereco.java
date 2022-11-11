@@ -34,7 +34,8 @@ public class Endereco {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Bairro bairro;
 
-    public Endereco () {}
+    public Endereco() {
+    }
 
     public Endereco(Long id, Long numeroCep, String nomeRua, Integer numeroRua, String desComplemento, Bairro bairro) {
         this.id = id;
@@ -97,5 +98,5 @@ public class Endereco {
     public String toString() {
         return "Endereco [id=" + id + ", numeroCep=" + numeroCep + ", nomeRua=" + nomeRua + ", numeroRua=" + numeroRua
                 + ", desComplemento=" + desComplemento + ", bairro=" + bairro + "]";
-    }    
+    }
 }

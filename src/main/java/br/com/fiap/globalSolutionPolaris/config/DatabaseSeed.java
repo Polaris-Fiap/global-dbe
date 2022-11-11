@@ -11,7 +11,7 @@ import br.com.fiap.globalSolutionPolaris.repository.LocalEscolhidoRepository;
 import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 
 @Configuration
-public class DatabaseSeed implements CommandLineRunner{
+public class DatabaseSeed implements CommandLineRunner {
 
     @Autowired
     MulherRepository mulherRepository;
@@ -25,26 +25,26 @@ public class DatabaseSeed implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
         mulherRepository.save(
-            new Mulher()
-                    .nome("Paula Pereira")
-                    .email("paula@gmail.com")
-                    .senha(passwordEncoder.encode("123"))
-                    .dtNascimento("01/01/2000")
-                    .cpf(123456789)
-                    .cpfDigito(22)
-                    .telefone(123456)
-                    .telefoneDDD(11)
-                    .role(new Role("ROLE_USER"))
+                new Mulher()
+                        .nome("Paula Pereira")
+                        .email("paula@gmail.com")
+                        .senha(passwordEncoder.encode("123"))
+                        .dtNascimento("01/01/2000")
+                        .cpf(123456789)
+                        .cpfDigito(22)
+                        .telefone(123456)
+                        .telefoneDDD(11)
+                        .role(new Role("ROLE_USER"))
 
-        );        
+        );
 
         // localRepository.save(
-        //     new LocalEscolhido()
-        //             .incidente("dois caras numa moto")
-        //             .dtOcorrencia("12/06/2006")
-        //             .avaliacaoPerigo(5)
-        //             .mulher(new Mulher(0,"silvia", "silvia@gmail.com", 123, new date))            
+        // new LocalEscolhido()
+        // .incidente("dois caras numa moto")
+        // .dtOcorrencia("12/06/2006")
+        // .avaliacaoPerigo(5)
+        // .mulher(new Mulher(0,"silvia", "silvia@gmail.com", 123, new date))
         // );
     }
-    
+
 }

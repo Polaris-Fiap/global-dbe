@@ -12,7 +12,7 @@ import br.com.fiap.globalSolutionPolaris.model.Mulher;
 import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 
 @Service
-public class AuthenticationService implements UserDetailsService{
+public class AuthenticationService implements UserDetailsService {
 
     @Autowired
     MulherRepository repository;
@@ -20,8 +20,9 @@ public class AuthenticationService implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<Mulher> mulher = repository.findByEmail(username);
-        if (mulher.isPresent()) return mulher.get();
+        if (mulher.isPresent())
+            return mulher.get();
         throw new UsernameNotFoundException("user not found " + username);
     }
-    
+
 }

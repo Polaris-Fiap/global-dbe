@@ -23,7 +23,7 @@ import br.com.fiap.globalSolutionPolaris.service.MulherService;
 @RestController
 @RequestMapping("api/mulher")
 public class MulherController {
-    
+
     @Autowired
     private MulherService service;
 
@@ -41,12 +41,12 @@ public class MulherController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Mulher> updateMulherById(@PathVariable Long id, @RequestBody @Valid Mulher novaMulher){
+    public ResponseEntity<Mulher> updateMulherById(@PathVariable Long id, @RequestBody @Valid Mulher novaMulher) {
         var optional = service.getById(id);
 
-        if(optional.isEmpty()){
+        if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        }
         var mulher = optional.get();
         BeanUtils.copyProperties(novaMulher, mulher);
         mulher.setCodMulher(id);
@@ -60,16 +60,16 @@ public class MulherController {
 
         var optional = service.getById(id);
 
-        if(optional.isEmpty()) {
+        if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
+        }
 
-    	service.remove(id);
+        service.remove(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Mulher> getMulherById(@PathVariable Long id){
+    public ResponseEntity<Mulher> getMulherById(@PathVariable Long id) {
         return ResponseEntity.of(service.getById(id));
     }
 }

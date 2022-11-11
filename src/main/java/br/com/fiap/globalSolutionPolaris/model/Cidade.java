@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_MNT_CIDADE")
 public class Cidade {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cd_cidade")
@@ -24,11 +24,12 @@ public class Cidade {
 
     @Column(name = "ds_sigla")
     private String siglaCidade;
-    
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Estado estado;
 
-    public Cidade () {}
+    public Cidade() {
+    }
 
     public Cidade(Long codCidade, String nomeCidade, String siglaCidade, Estado estado) {
         this.codCidade = codCidade;

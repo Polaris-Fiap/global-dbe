@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_MNT_ESTADO")
 public class Estado {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cd_estado")
@@ -18,11 +18,12 @@ public class Estado {
 
     @Column(name = "nm_estado")
     private String nomeEstado;
-    
+
     @Column(name = "ds_sigla")
     private String siglaEstado;
 
-    public Estado() {}
+    public Estado() {
+    }
 
     public Estado(Long codEstado, String nomeEstado, String siglaEstado) {
         this.codEstado = codEstado;

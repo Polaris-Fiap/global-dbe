@@ -37,16 +37,18 @@ public class LocalEscolhidoService {
         enderecoRepository.save(dto.getEndereco());
 
         LocalEscolhido local = new LocalEscolhido();
-        
+
         Optional<Mulher> verifMulher = mulherRepository.findById(dto.getCodMulher());
-        if(verifMulher.isEmpty()) throw new Error("Nao encontrado");
-        
+        if (verifMulher.isEmpty())
+            throw new Error("Nao encontrado");
+
         Optional<Endereco> verifEndereco = enderecoRepository.findById(dto.getEndereco().getId());
-        if(verifEndereco.isEmpty()) throw new Error("Nao encontrado");
+        if (verifEndereco.isEmpty())
+            throw new Error("Nao encontrado");
 
         Endereco endereco = verifEndereco.get();
         Mulher mulher = verifMulher.get();
-        
+
         local.setMulher(mulher);
         local.setIncidente(dto.getIncidente());
         local.setDtOcorrencia(dto.getDtOcorrencia());

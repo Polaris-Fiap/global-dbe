@@ -15,13 +15,13 @@ import br.com.fiap.globalSolutionPolaris.repository.MulherRepository;
 @Service
 @Transactional
 public class MulherService {
-    
+
     @Autowired
     MulherRepository repository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
-    
+
     public void save(Mulher mulher) {
         mulher.setSenha(passwordEncoder.encode(mulher.getPassword()));
         repository.save(mulher);
@@ -39,5 +39,4 @@ public class MulherService {
         return repository.findById(id);
     }
 
-    
 }

@@ -14,7 +14,7 @@ import br.com.fiap.globalSolutionPolaris.repository.EnderecoRepository;
 @Service
 @Transactional
 public class EnderecoService {
-    
+
     @Autowired
     EnderecoRepository repository;
 

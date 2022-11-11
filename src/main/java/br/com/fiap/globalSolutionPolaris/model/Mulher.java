@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "T_MNT_MULHER")
-public class Mulher implements UserDetails{
+public class Mulher implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +56,7 @@ public class Mulher implements UserDetails{
     @Column(name = "nr_telefone_ddd")
     private Integer telefoneDDD;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private List<Role> roles = new ArrayList<>();
 
     public Mulher() {
@@ -182,7 +182,7 @@ public class Mulher implements UserDetails{
         return true;
     }
 
-    //Métodos para setar atributos no commandLine c/valid
+    // Métodos para setar atributos no commandLine c/valid
     public Mulher nome(String nome) {
         Assert.notNull(nome, "Nome nao pode estar vazia");
         this.nomeMulher = nome;

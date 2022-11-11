@@ -7,5 +7,5 @@ import br.com.fiap.globalSolutionPolaris.model.Endereco;
 
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
-    
+
 }

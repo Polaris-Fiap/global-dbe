@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" th:href="@{~/css/home.css}">
+	<link rel="stylesheet" th:href="@{~/css/global.css}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="header">
+		<h1>Global Solution DBE</h1>
+		<a th:href="@{/mulheres/new}"><button class="botao-cadastrar">Cadastrar uma nova ocorrência</button></a>
+	</div>
+
+	<div class="container-table">
+		<div class="div-tabela">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Nome</th>
+						<th scope="col">Email</th>
+						<th scope="col">Telefone</th>
+						<th scope="col">CPF</th>
+						<th scope="col">Digito CPF</th>
+						<th scope="col">Opções</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="mulher: ${mulheres}">
+						<td th:text="${mulher.nomeMulher}"></td>
+						<td th:text="${mulher.email}"></td>
+						<td th:text="${mulher.telefone}"></td>
+						<td th:text="${mulher.cpf}"></td>
+						<td th:text="${mulher.cpfDigito}"></td>
+						<td>
+							<a th:href="@{/mulheres/edit/{id}(id=${mulher.codMulher})}">
+								<button class="botao-cadastrar">Editar</button>
+							</a>
+							<a th:href="@{/mulheres/{id}(id=${mulher.codMulher})}">
+								<button class="botao-cadastrar">Remover</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
